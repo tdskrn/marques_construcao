@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:marques_construcao/views/buyers/main_screen.dart';
 
 void main() {
@@ -10,7 +11,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // deixa barra transparente
+    SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Marques Construção',
+      theme: ThemeData(primarySwatch: Colors.orange, fontFamily: 'Brand-Bold'),
       home: MainScreen(),
     );
   }
